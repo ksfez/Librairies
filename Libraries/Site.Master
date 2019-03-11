@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Libraries.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">     
+          <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>  
+    <webopt:BundleReference runat="server" Path="~/Content/css" /> 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css">
+        .auto-style2 {
+            width: 600px;
+            height: 700px;
+        }
+        .auto-style3 {
+            width: 76px;
+            height: 72px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                   
+                    &nbsp;&nbsp;&nbsp;
+                    <img alt="" class="auto-style3" src="Content/Images/i-love-reading-clipart-1.jpg" /></p>
+                <p class="site-title">
+                   
+                    Libraries
+                </p>
+            </div>
+            <div class="float-right">
+                
+                <nav>
+                    <ul id="menu">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a id="A1" runat="server" href="Tables.aspx">Tables</a></li>
+                        <li><a runat="server" href="~/LogInMenu.aspx">Log in</a></li>
+                        <li><a runat="server" href="~/Search.aspx">Search</a></li>
+                        <li><a runat="server" href="~/Lottery.aspx">Lottery</a></li>
+                        <li><a runat="server" href="~/UpdateMenu.aspx">Update my profile</a></li>
+                        <li><a id="A2" runat="server" href="~/DeleteMenu.aspx">Delete an account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" >
+                <h1>Welcome to our libraries network!!</h1>
+            </asp:ContentPlaceHolder>
+        </section>
+    </div>
+        
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; <%: DateTime.Now.Year %> 
+                    <img alt="" class="auto-style2" src="Content/Images/keep-calm-and-love-reading-64.png" /></p>
+            </div>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>
